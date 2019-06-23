@@ -32,16 +32,8 @@ $(function () {
 
 
         navigator.serviceWorker.getRegistration().then(function(reg) {
-
-
-            var notificationTitle = 'Background Message Title';
-            var notificationOptions = {
-                body: 'Background Message body.',
-                //icon: '/firebase-logo.png'
-            };
-
-            return reg.showNotification(notificationTitle,
-                notificationOptions);
+            return reg.showNotification(payload.notification.title,
+                payload.notification);
         });
 
     });

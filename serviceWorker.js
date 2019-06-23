@@ -40,27 +40,6 @@ function registerValidSW(swUrl, config) {
                             // "Content is cached for offline use." message.
                             console.log('Content is cached for offline use.');
 
-                            importScripts('https://www.gstatic.com/firebasejs/6.2.2/firebase-app.js');
-                            importScripts('https://www.gstatic.com/firebasejs/6.2.2/firebase-messaging.js');
-                            importScripts('https://www.gstatic.com/firebasejs/6.2.2/init.js');
-                            console.log('imported scripts')
-
-                            const messaging = firebase.messaging();
-                            console.log("messaging sv", messaging);
-                            console.log("test");
-                            messaging.setBackgroundMessageHandler(function(payload) {
-                                console.log('[firebase-messaging-sw.js] Received background message ', payload);
-                                // Customize notification here
-                                var notificationTitle = 'Background Message Title';
-                                var notificationOptions = {
-                                    body: 'Background Message body.',
-                                    icon: '/firebase-logo.png'
-                                };
-
-                                return self.registration.showNotification(notificationTitle,
-                                    notificationOptions);
-                            });
-
                             // Execute callback
                             if (config && config.onSuccess) {
                                 config.onSuccess(registration);
