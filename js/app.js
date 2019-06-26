@@ -1,3 +1,16 @@
+var firebaseConfig = {
+    apiKey: "AIzaSyAsAV74EJBUpt4-0-tsHaPBXLI6MdRE8wY",
+    authDomain: "notify-aa789.firebaseapp.com",
+    databaseURL: "https://notify-aa789.firebaseio.com",
+    projectId: "notify-aa789",
+    storageBucket: "",
+    messagingSenderId: "662214436703",
+    appId: "1:662214436703:web:df5d212c1c580ee9"
+};
+firebase.initializeApp(firebaseConfig);
+
+
+
 function sendTokenToServer(token) {
     fetch('https://shgv1q2kuk.execute-api.eu-west-1.amazonaws.com/prod/topic',
         {method:"POST", body:JSON.stringify({
@@ -81,7 +94,7 @@ $(function () {
 });
 
 if ('serviceWorker' in navigator) {
-    registerValidSW('/serviceWorker.js', {});
+    registerValidSW('/js/serviceWorker.js', {});
 }
 
 function registerValidSW(swUrl, config) {

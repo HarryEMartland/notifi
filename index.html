@@ -1,49 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Notifi</title>
+    <meta name="description"
+          content="Your notification platform for bars and events helping you to connect with your customers">
+
+    <title>Notify</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           rel="stylesheet"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
           crossorigin="anonymous">
-    <link rel="manifest" href="manifest.json">
+    <link href="css/full-width-pics.css" rel="stylesheet">
+    <link rel="manifest" href="/manifest.json">
 </head>
+
 <body>
-<div class="container">
-    <div class="row">
-        <div class="col">
-            <h1>Khal's Bar</h1>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">Notify</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarResponsive" aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" target="_blank" href="/khal">Demo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#get-started">Get Started</a>
+                </li>
+            </ul>
         </div>
     </div>
-    <div class="row">
-        <div class="col">
-            <p>Subscribe to our notifications to get alerts when we have offers and get free drinks!</p>
-        </div>
+</nav>
+
+<header class="py-5 bg-image-full" style="background-image: url('images/phon-in-hands.jpg');">
+    <div style="height: 100px;"></div>
+</header>
+
+<section class="py-5">
+    <div class="container">
+        <h1>Engage with your customers</h1>
+        <p class="lead">
+            The hear and now is more important than ever. Your advertisement strategy should make use of this.
+        </p>
+        <p>
+            Notify allows you to push notifications to your customers bringing information to their attention instantly.
+            You can use this to advertise short term offers or keep people up to date which what is going on around them.
+            you are in control of sending the notifications and can configure how they look, sound and respond to interaction.
+            Email lists are in the past, what are you doing to bring your business into the future?
+        </p>
     </div>
-    <div class="row">
-        <div class="col text-center">
-            <button class="subscribe-btn btn-lg btn-success">Subscribe</button>
-        </div>
+</section>
+
+<section class="py-5 bg-image-full" style="background-image: url('images/phone-outside.jpg');">
+    <div style="height: 200px;"></div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+        <h1 id="get-started">Get Started</h1>
+        <p class="lead">
+            Send us an email at <a href="mailto:HarryEMartland@Gmail.com">HarryEMartland@Gmail.com</a> letting us know where you are based and how you would like to use Notify.
+        </p>
     </div>
-</div>
+</section>
+
+<footer class="py-5 bg-dark">
+    <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Notify 2019</p>
+    </div>
+</footer>
+
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://www.gstatic.com/firebasejs/6.2.2/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/6.2.2/firebase-messaging.js"></script>
-<script>
-    var firebaseConfig = {
-        apiKey: "AIzaSyAsAV74EJBUpt4-0-tsHaPBXLI6MdRE8wY",
-        authDomain: "notify-aa789.firebaseapp.com",
-        databaseURL: "https://notify-aa789.firebaseio.com",
-        projectId: "notify-aa789",
-        storageBucket: "",
-        messagingSenderId: "662214436703",
-        appId: "1:662214436703:web:df5d212c1c580ee9"
-    };
-    firebase.initializeApp(firebaseConfig);
-</script>
-<script type="text/javascript" src="app.js"></script>
-<script type="text/javascript" src="serviceWorker.js"></script>
+
 </html>
