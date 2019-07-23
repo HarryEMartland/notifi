@@ -68,12 +68,42 @@
     <div style="height: 200px;"></div>
 </section>
 
-<section class="py-5">
+<section class="pt-5">
     <div class="container">
         <h1 id="get-started">Get Started</h1>
         <p class="lead">
             Send us an email at <a href="mailto:HarryEMartland@Gmail.com">HarryEMartland@Gmail.com</a> letting us know where you are based and how you would like to use Notify.
         </p>
+    </div>
+</section>
+
+<section class="pb-5">
+    <div class="container">
+        <h1 id="send-notification">Send a notification</h1>
+        <form id="testForm">
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" class="form-control" id="title" aria-describedby="emailHelp" placeholder="Notification title">
+                <small id="emailHelp" class="form-text text-muted">This will be the main title of the notification keep is small and snippy</small>
+            </div>
+            <div class="form-group">
+                <label for="body">Body</label>
+                <input type="text" class="form-control" id="body" aria-describedby="emailHelp" placeholder="Notification body">
+                <small id="bodyHelp" class="form-text text-muted">This is the main information you want to send to the customer</small>
+            </div>
+            <div class="form-group">
+                <label for="icon">Icon</label>
+                <select class="form-control" id="icon">
+                    <option value="https://img.icons8.com/ios-filled/50/000000/thumb-up.png">Thumb Up</option>
+                    <option value="https://img.icons8.com/ios-filled/50/000000/beer.png">Beer</option>
+                    <option value="https://img.icons8.com/ios/50/000000/microphone.png">Microphone</option>
+                    <option value="https://img.icons8.com/flat_round/64/000000/hearts.png">Heart</option>
+                </select>
+                <small id="iconHelp" class="form-text text-muted">Customise the image which shows up next to your notification</small>
+
+            </div>
+            <button type="submit" class="btn btn-primary">Notify!</button>
+        </form>
     </div>
 </section>
 
@@ -84,5 +114,22 @@
 </footer>
 
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $('#testForm').on('submit', function (e) {
+        e.preventDefault();
+        Notification.requestPermission().then(function (permission) {
+            // If the user accepts, let's create a notification
+            if (permission === "granted") {
+                var notification = new Notification($('#title').val(),{
+                    body: $('#body').val(),
+                    icon: $('#icon').val()
+                });
+            }else {
+                alert('You need to allow notifications to receive notifications')
+            }
+        });
+    })
+</script>
 
 </html>
