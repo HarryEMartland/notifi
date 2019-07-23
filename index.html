@@ -115,15 +115,20 @@
 
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.2.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.2.2/firebase-messaging.js"></script>
+</script><script type="text/javascript" src="/js/app.js"></script>
 <script type="text/javascript">
     $('#testForm').on('submit', function (e) {
         e.preventDefault();
         Notification.requestPermission().then(function (permission) {
             // If the user accepts, let's create a notification
             if (permission === "granted") {
-                var notification = new Notification($('#title').val(),{
-                    body: $('#body').val(),
-                    icon: $('#icon').val()
+                navigator.serviceWorker.getRegistration().then(function(registration) {
+                    registration.showNotification($('#title').val(),{
+                        body: $('#body').val(),
+                        icon: $('#icon').val()
+                    });
                 });
             }else {
                 alert('You need to allow notifications to receive notifications')
