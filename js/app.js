@@ -94,7 +94,7 @@ $(function () {
 });
 
 if ('serviceWorker' in navigator) {
-    registerValidSW('/js/serviceWorker.js', {});
+    registerValidSW('/serviceWorker.js', {});
 }
 
 function registerValidSW(swUrl, config) {
